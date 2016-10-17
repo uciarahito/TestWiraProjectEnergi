@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_master_setup"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Master Setup" />
+        <item
+            android:id="@+id/nav_purchasing"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Purchasing" />
+        <item
+            android:id="@+id/nav_inventory"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Inventory" />
+        <item
+            android:id="@+id/nav_sales_customer"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sales (Costumer)" />
+        <item
+            android:id="@+id/nav_reporting"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Reporting" />
+        <item
+            android:id="@+id/nav_utility"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Utility" />
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
