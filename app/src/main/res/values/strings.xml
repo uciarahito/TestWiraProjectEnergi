@@ -14,4 +14,7 @@
     <string name="title_activity_test_register">TestRegister</string>
     <string name="txtRegister">Create an account!</string>
     <string name="title_activity_register">RegisterActivity</string>
+
+    //RegisterActivity
+    <string name="btn_register">REGISTER</string>
 </resources>

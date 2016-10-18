@@ -68,17 +68,22 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                     loginResponseCall.enqueue(new Callback<LoginResponse>() {
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                            String id = "";
-                            id = response.body().getId();
-                            if (id.equals("0")){
-                                Toast.makeText(LoginActivity.this, "Data tidak vaid!", Toast.LENGTH_SHORT).show();
+                            if(response.isSuccessful()){
+                                String id = "";
+                                id = response.body().getToken();
+
+                                if (id.equals("0")){
+                                    Toast.makeText(LoginActivity.this, "Data tidak vaid!", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Data valid!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    SessionApps.id_email_login = Integer.parseInt(id);
+                                    SessionApps.isLogin = true;
+                                    SessionApps.email_login = email;
+                                    startActivity(intent);
+                                }
                             } else {
-                                Toast.makeText(LoginActivity.this, "Data valid!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                SessionApps.id_email_login = Integer.parseInt(id);
-                                SessionApps.isLogin = true;
-                                SessionApps.email_login = email;
-                                startActivity(intent);
+                                Log.d("error message", "Error");
                             }
                         }
 
