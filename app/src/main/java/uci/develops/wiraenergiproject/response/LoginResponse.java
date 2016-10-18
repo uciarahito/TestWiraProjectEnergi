@@ -2,7 +2,7 @@ package uci.develops.wiraenergiproject.response;
 
 
 /**
- * Created by ArahitoPC on 5/15/2016.
+ * Created by ArahitoPC .
  */
 public class LoginResponse {
 //    private String id;
