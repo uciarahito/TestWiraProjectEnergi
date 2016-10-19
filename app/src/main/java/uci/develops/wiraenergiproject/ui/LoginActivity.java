@@ -28,7 +28,7 @@ import uci.develops.wiraenergiproject.helper.SessionApps;
 import uci.develops.wiraenergiproject.response.LoginResponse;
 import uci.develops.wiraenergiproject.service.Rest_Client;
 
-public class LoginActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class LoginActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Bind(R.id.txtEmail)
     protected TextView mEmail;
@@ -59,20 +59,21 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mEmail.getText().toString().equals("") || mPassword.getText().toString().equals("")){
+                if (mEmail.getText().toString().equals("") || mPassword.getText().toString().equals("")) {
                     Toast.makeText(LoginActivity.this, "Username or password is empty!", Toast.LENGTH_SHORT).show();
-                } else{
+                } else {
                     final String email = mEmail.getText().toString();
                     final String password = mPassword.getText().toString();
                     Call<LoginResponse> loginResponseCall = Rest_Client.getRestClient().Login(email, password);
                     loginResponseCall.enqueue(new Callback<LoginResponse>() {
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                            if(response.isSuccessful()){
+                            if (response.isSuccessful()) {
                                 String id = "";
                                 id = response.body().getToken();
                                 Toast.makeText(LoginActivity.this, id, Toast.LENGTH_SHORT).show();
                             } else {
+                                Toast.makeText(LoginActivity.this, "Email dan Password tidak terdaftar!", Toast.LENGTH_SHORT).show();
                                 Log.d("error message", "Error");
                             }
                         }
@@ -112,11 +113,11 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         //Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id==R.id.nav_profile){
+        if (id == R.id.nav_profile) {
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_master_setup){
-            if (!SessionApps.isLogin){
+        } else if (id == R.id.nav_master_setup) {
+            if (!SessionApps.isLogin) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
                 builder.setTitle("Warning!");
                 builder.setMessage("Silahkan login terlebih dahulu!");
@@ -133,19 +134,19 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                 Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
-        } else if (id == R.id.nav_purchasing){
+        } else if (id == R.id.nav_purchasing) {
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_inventory){
+        } else if (id == R.id.nav_inventory) {
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_sales_customer){
+        } else if (id == R.id.nav_sales_customer) {
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_reporting){
+        } else if (id == R.id.nav_reporting) {
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_utility){
+        } else if (id == R.id.nav_utility) {
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
             startActivity(intent);
         }

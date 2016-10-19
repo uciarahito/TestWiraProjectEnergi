@@ -5,17 +5,37 @@ package uci.develops.wiraenergiproject.response;
  * Created by ArahitoPC
  */
 public class RegisterResponse {
-    private String hasil;
+    private String status;
+    private String code;
+    private String info;
 
-    public RegisterResponse(String hasil) {
-        this.hasil = hasil;
+    public RegisterResponse(String status, String code, String info) {
+        this.status = status;
+        this.code = code;
+        this.info = info;
     }
 
-    public String getHasil() {
-        return hasil;
+    public String getStatus() {
+        return status;
     }
 
-    public void setHasil(String hasil) {
-        this.hasil = hasil;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

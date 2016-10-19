@@ -26,7 +26,7 @@ import uci.develops.wiraenergiproject.R;
 import uci.develops.wiraenergiproject.response.RegisterResponse;
 import uci.develops.wiraenergiproject.service.Rest_Client;
 
-public class RegisterActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class RegisterActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Bind(R.id.txtName)
     protected TextView mName;
@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity implements NavigationVie
             public void onClick(View v) {
                 String name = mName.getText().toString();
                 String email = mEmail.getText().toString();
-                String password = mPassword.getText().toString();
+                final String password = mPassword.getText().toString();
 
                 if (name.equals("") || email.equals("") || password.equals("")) {
                     Toast.makeText(RegisterActivity.this, "Ada field yang kosong!", Toast.LENGTH_SHORT).show();
@@ -67,12 +67,13 @@ public class RegisterActivity extends AppCompatActivity implements NavigationVie
                         @Override
                         public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
 
-                            if(response.isSuccessful()){
+                            if (response.isSuccessful()) {
                                 Toast.makeText(RegisterActivity.this, "Sukses", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent);
                             } else {
                                 Log.d("error message", "Error");
+                                Toast.makeText(RegisterActivity.this, "Data yang anda isi tidak valid!", Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -83,6 +84,14 @@ public class RegisterActivity extends AppCompatActivity implements NavigationVie
                         }
                     });
                 }
+            }
+        });
+
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 

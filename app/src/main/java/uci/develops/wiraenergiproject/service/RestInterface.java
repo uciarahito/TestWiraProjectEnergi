@@ -18,6 +18,6 @@ public interface RestInterface {
     Call<LoginResponse> Login(@Field("email") String email, @Field("password") String password);
 
     @FormUrlEncoded
-    @POST("auth/register")
+    @POST("register")
     Call<RegisterResponse> Register(@Field("name") String name, @Field("email") String email, @Field("password") String password);
 }
