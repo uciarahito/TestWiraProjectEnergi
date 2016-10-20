@@ -21,7 +21,7 @@ public class CustomerFormActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        initializeComponent();
+        initializeComponent();//
     }
 
     private void initializeComponent(){
