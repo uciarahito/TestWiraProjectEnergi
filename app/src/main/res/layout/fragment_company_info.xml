@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uci.develops.wiraenergiproject.ui.CompanyInfoFragment">
+    tools:context=".fragment.CompanyInfoFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

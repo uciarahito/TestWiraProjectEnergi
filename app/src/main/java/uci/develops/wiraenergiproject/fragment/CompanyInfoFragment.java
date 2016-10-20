@@ -1,4 +1,4 @@
-package uci.develops.wiraenergiproject.ui;
+package uci.develops.wiraenergiproject.fragment;
 
 import android.content.Context;
 import android.net.Uri;
