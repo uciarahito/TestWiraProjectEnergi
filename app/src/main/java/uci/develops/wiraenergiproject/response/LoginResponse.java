@@ -5,7 +5,7 @@ package uci.develops.wiraenergiproject.response;
  * Created by ArahitoPC .
  */
 public class LoginResponse {
-//    private String id;
+    private int id;
     private String token;
 
     public LoginResponse(String id) {

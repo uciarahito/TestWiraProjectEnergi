@@ -55,8 +55,8 @@ public class RegisterActivity extends AppCompatActivity implements NavigationVie
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = mName.getText().toString();
-                String email = mEmail.getText().toString();
+                final String name = mName.getText().toString();
+                final String email = mEmail.getText().toString();
                 final String password = mPassword.getText().toString();
 
                 if (name.equals("") || email.equals("") || password.equals("")) {
@@ -68,7 +68,10 @@ public class RegisterActivity extends AppCompatActivity implements NavigationVie
                         public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
 
                             if (response.isSuccessful()) {
-                                Toast.makeText(RegisterActivity.this, "Sukses", Toast.LENGTH_SHORT).show();
+//                                Log.e("Test Register", name+"nnnnnnn");
+//                                Log.e("Test Register", email+"eeeeeeee");
+//                                Log.e("Test Register", password+"ppppppp");
+                                Toast.makeText(RegisterActivity.this, "Verifikasi email anda terlebih dahulu!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent);
                             } else {

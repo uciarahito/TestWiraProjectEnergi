@@ -17,4 +17,10 @@
 
     //RegisterActivity
     <string name="btn_register">REGISTER</string>
+
+    //MainActivity
+    <string name="txtVerification">Email Verification Status</string>
+    <string name="txtStatus">Success</string>
+    <string name="btnNext">Next</string>
+    <string name="btnPrevious">Previous</string>
 </resources>

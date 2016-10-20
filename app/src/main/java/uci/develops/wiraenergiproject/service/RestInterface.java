@@ -14,10 +14,10 @@ import uci.develops.wiraenergiproject.response.RegisterResponse;
 public interface RestInterface {
 
     @FormUrlEncoded
-    @POST("auth/login")
+    @POST("api/login")
     Call<LoginResponse> Login(@Field("email") String email, @Field("password") String password);
 
     @FormUrlEncoded
-    @POST("register")
+    @POST("api/register")
     Call<RegisterResponse> Register(@Field("name") String name, @Field("email") String email, @Field("password") String password);
 }
