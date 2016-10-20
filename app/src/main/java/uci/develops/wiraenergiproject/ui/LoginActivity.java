@@ -69,9 +69,24 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                             if (response.isSuccessful()) {
-                                String id = "";
-                                id = response.body().getToken();
-                                Toast.makeText(LoginActivity.this, id, Toast.LENGTH_SHORT).show();
+                                String status = "";
+                                String code = "";
+                                String info = "";
+                                String token = "";
+                                boolean activated;
+                                String role = "";
+                                status = response.body().getStatus();
+                                code = response.body().getCode();
+                                info = response.body().getInfo();
+                                token = response.body().getToken();
+                                activated = response.body().isActivated();
+                                Toast.makeText(LoginActivity.this, activated + "  " + token, Toast.LENGTH_SHORT).show();
+                                if (activated == true){
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Lakukan Verifikasi Email!", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
                                 Toast.makeText(LoginActivity.this, "Email dan Password tidak terdaftar!", Toast.LENGTH_SHORT).show();
                                 Log.d("error message", "Error");
