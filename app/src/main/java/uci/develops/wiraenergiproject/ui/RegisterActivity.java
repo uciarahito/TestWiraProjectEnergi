@@ -71,7 +71,9 @@ public class RegisterActivity extends AppCompatActivity implements NavigationVie
 //                                Log.e("Test Register", name+"nnnnnnn");
 //                                Log.e("Test Register", email+"eeeeeeee");
 //                                Log.e("Test Register", password+"ppppppp");
-                                Toast.makeText(RegisterActivity.this, "Verifikasi email anda terlebih dahulu!", Toast.LENGTH_SHORT).show();
+                                String info = "";
+                                info = response.body().getInfo();
+                                Toast.makeText(RegisterActivity.this, info, Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent);
                             } else {
